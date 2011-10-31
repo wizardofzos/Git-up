@@ -1,0 +1,26 @@
+#!/bin/bash
+#
+# Setup some handy dandy git aliases
+
+git config --global alias.br 'branch -a'
+git config --global alias.ci 'commit'
+git config --global alias.co 'checkout'
+git config --global alias.st 'status -s -b'
+git config --global alias.praise 'blame'
+git config --global alias.x '!gitx'
+git config --global alias.l 'log --pretty=format:"%h %s (%an, %cr)"'
+git config --global alias.tree 'log --graph "--pretty=format:%C(yellow bold)%h%Creset by %C(red)%an%Creset (%ar)%C(cyan bold)%d%Creset%n%s%n%b"'
+git config --global alias.ta '!git tree --all'
+git config --global alias.tas 'log --graph "--pretty=format:%C(yellow bold)%h%Creset by %C(red)%an%Creset (%ar)%C(cyan bold)%d%Creset%n%s%n%b" --all --not git-it'
+git config --global alias.funcdiff '!sh -c "git show \"\$0:\$2\" | sed -n \"/^[^ \t].*\$3(/,/^}/p\" > .tmp1 && git show \"\$1:\$2\" | sed -n \"/^[^ \t].*\$3(/,/^}/p\" > .tmp2 && git diff .tmp1 .tmp2"'
+git config --global alias.idiff 'diff --cached'
+git config --global alias.dc 'diff --cached'
+git config --global alias.su 'submodule update'
+git config --global alias.si 'submodule init'
+git config --global alias.di 'diff'
+git config --global alias.kick 'push'
+git config --global alias.incoming '!git fetch -q github develop && git log HEAD..FETCH_HEAD'
+git config --global alias.outgoing '!git fetch -q github develop && git log FETCH_HEAD..HEAD'
+git config --global alias.cp 'cherry-pick'
+git config --global alias.last '!git show | head -n1 | awk "{print \$2}"'
+git config --global alias.clean-orig '!find . -name '*.orig' -exec rm {} \;'
