@@ -24,3 +24,4 @@ git config --global alias.outgoing '!git fetch -q github develop && git log FETC
 git config --global alias.cp 'cherry-pick'
 git config --global alias.last '!git show | head -n1 | awk "{print \$2}"'
 git config --global alias.clean-orig '!find . -name '*.orig' -exec rm {} \;'
+git config --global alias.shorten '!sh -c '"'"'curl -i http://git.io -F url=$1 2>/dev/null | grep -i location'"'"' -'
